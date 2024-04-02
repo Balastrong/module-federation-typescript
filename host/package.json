@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@originjs/vite-plugin-federation": "^1.3.5",
+    "@tanstack/react-router": "^1.26.4",
+    "@tanstack/router-vite-plugin": "^1.26.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
