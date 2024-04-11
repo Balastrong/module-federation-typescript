@@ -14,6 +14,7 @@ import { Route as rootRoute } from './routes/__root'
 import { Route as App02Import } from './routes/app02'
 import { Route as App01Import } from './routes/app01'
 import { Route as IndexImport } from './routes/index'
+import { Route as App02BarImport } from './routes/app02.bar'
 
 // Create/Update Routes
 
@@ -32,6 +33,11 @@ const IndexRoute = IndexImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
+const App02BarRoute = App02BarImport.update({
+  path: '/bar',
+  getParentRoute: () => App02Route,
+} as any)
+
 // Populate the FileRoutesByPath interface
 
 declare module '@tanstack/react-router' {
@@ -48,6 +54,10 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof App02Import
       parentRoute: typeof rootRoute
     }
+    '/app02/bar': {
+      preLoaderRoute: typeof App02BarImport
+      parentRoute: typeof App02Import
+    }
   }
 }
 
@@ -56,7 +66,7 @@ declare module '@tanstack/react-router' {
 export const routeTree = rootRoute.addChildren([
   IndexRoute,
   App01Route,
-  App02Route,
+  App02Route.addChildren([App02BarRoute]),
 ])
 
 /* prettier-ignore-end */
