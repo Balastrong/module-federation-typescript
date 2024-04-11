@@ -1,0 +1,21 @@
+{
+  "folder-path-color.folders": [
+    {
+      "path": "host",
+      "symbol": "H",
+      "tooltip": "Host"
+    },
+    {
+      "path": "app01",
+      "symbol": "01",
+      "tooltip": "App 01",
+      "color": "blue"
+    },
+    {
+      "path": "app02",
+      "symbol": "02",
+      "tooltip": "App 02",
+      "color": "cyan"
+    }
+  ]
+}
